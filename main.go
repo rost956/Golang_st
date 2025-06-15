@@ -3,12 +3,17 @@ package main
 import "fmt"
 
 func main() {
-	quantity := 4
-	length, width := 1.2, 2.4
-	customerName := "Damon Cole"
-	fmt.Println(customerName)
-	fmt.Println("has ordered", quantity, "sheets")
-	fmt.Println("each with an area of")
-	fmt.Println(length*width, "square merers")
+	price := 100
+	fmt.Println("Price is", price, "dollars.")
+
+	taxRate := 0.08
+	tax := float64(price) * taxRate
+	fmt.Println("Tax is", tax, "dollars.")
+
+	total := float64(price) + tax
+	fmt.Println("Total cost is", total, "dollars.")
+	availableFunds := 120
+	fmt.Println(availableFunds, "dollars available.")
+	fmt.Println("Within budget?", total <= float64(availableFunds))
 
 }
