@@ -2,19 +2,15 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"log"
 	"os"
 )
 
 func main() {
-	fmt.Print("Enter a grade: ")
-	reader := bufio.NewReader(os.Stdin)
-	input, err := reader.ReadString('\n')
+	fileInfo, err := os.Stat("my.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(input)
-
+	fmt.Println(fileInfo)
 }
