@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+	"strings"
+)
 
 func main() {
-	fmt.Println("Hello, GO!")
+	fmt.Println(reflect.TypeOf(false))
+	fmt.Println(strings.Title("headfirstgo"))
 }
-test
