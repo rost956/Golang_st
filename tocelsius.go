@@ -1,4 +1,4 @@
-// pass_fail сообщает, сдал ли пользователь экзамен.
+// преобразует температуру в градусах по Фаренгейту в градусы по цельсию
 package main
 
 import (
@@ -23,17 +23,13 @@ func getFloat() (float64, error) {
 	}
 	return number, nil
 }
+
 func main() {
-	fmt.Print("Enter a grade: ")
-	grade, err := getFloat()
+	fmt.Print("Enter a temperature in Fahrenheit: ")
+	fahrenheit, err := getFloat()
 	if err != nil {
 		log.Fatal(err)
 	}
-	var status string
-	if grade >= 60 { //условие
-		status = "passing"
-	} else {
-		status = "failing"
-	}
-	fmt.Println("A grade of", grade, "is", status) //результат
+	celcius := (fahrenheit - 32) * 5 / 9
+	fmt.Printf("%0.2f degrees Celsius\n", celcius)
 }
